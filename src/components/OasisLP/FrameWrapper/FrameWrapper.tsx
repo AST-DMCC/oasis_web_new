@@ -34,14 +34,14 @@ export const FrameWrapper = () => {
     },
     {
       category: "Scalability",
-      traditional: "Difficult to manage multiple trainees",
-      platform: "Streamlined supervision for any number of trainees",
+      traditional: "Difficult to manage multiple supervisees",
+      platform: "Streamlined supervision for any number of supervisees",
     },
-    {
-      category: "Support Availability",
-      traditional: "Limited to specific hours",
-      platform: "Access to support, tutorials, and resources anytime",
-    },
+    // {
+    //   category: "Support Availability",
+    //   traditional: "Limited to specific hours",
+    //   platform: "Access to support, tutorials, and resources anytime",
+    // },
     {
       category: "Overall Efficiency",
       traditional: "Time-consuming and inconvenient",

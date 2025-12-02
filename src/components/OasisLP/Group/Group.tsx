@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -15,26 +14,26 @@ export const Group = () => {
             id: 1,
             icon: "/icons/Polygon-yellow.svg",
             title: "Affordable Pricing",
-            description:
-                "Save up to 40% compared to traditional supervision methods.",
+            description: "Save up to 40% compared to other supervision platforms",
         },
         {
             id: 2,
             icon: "/icons/Polygon-pink.svg",
             title: "Complete Compliance",
-            description: "Automated checks ensure your hours meet BACB standards.",
+            description:
+                "Automated checks ensure your fieldwork hours meet BACB requirements",
         },
         {
             id: 3,
             icon: "/icons/Polygon-dark-blue.svg",
             title: "Scalability",
-            description: "Manage multiple supervisees or employees without hassle.",
+            description: "Manage multiple supervisees without hassle",
         },
         {
             id: 4,
             icon: "/icons/Polygon-light-purple.svg",
             title: "Flexible Feedback",
-            description: "Receive or provide feedback at your convenience.",
+            description: "Leave time stamped feedback at your convenience",
         },
         {
             id: 5,
@@ -58,9 +57,17 @@ export const Group = () => {
                         <CardTitle className="text-2xl text-center text-black font-['Josefin_Sans',Helvetica]">
                             All-In-One Platform
                         </CardTitle>
+
+                        {/* ❌ COMMENTED OUT OLD TEXT */}
+                        {/* 
                         <CardDescription className="text-lg text-center text-black font-['Cairo',Helvetica] leading-[30px]">
                             Upload videos, log hours, receive feedback, and generate
                             compliance-ready reports—all from one place.
+                        </CardDescription>
+                        */}
+
+                        {/* ⭐ EMPTY (as requested) */}
+                        <CardDescription className="text-lg text-center text-black font-['Cairo',Helvetica] leading-[30px]">
                         </CardDescription>
                     </CardContent>
                 </Card>
@@ -120,16 +127,16 @@ export const Group = () => {
                     </div>
                 </div>
 
-
-                {/* Call to Action */}
+                {/* ❌ COMMENTED OUT Explore the Platform button */}
+                {/*
                 <Button
                     variant="outline"
                     className="h-11 px-10 py-4 rounded-[33px] border-2 border-[#562af5] text-[#562af5] text-lg sm:text-xl font-semibold font-['Josefin_Sans',Helvetica] hover:bg-[#ece9ff]"
                 >
                     Explore the Platform
                 </Button>
+                */}
             </div>
         </section>
     );
 };
-

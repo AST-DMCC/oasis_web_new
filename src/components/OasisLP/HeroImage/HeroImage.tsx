@@ -32,6 +32,7 @@ export const HeroImage = () => {
           Anywhere
         </motion.h1>
 
+        {/* UPDATED PARAGRAPH */}
         <motion.p
           className="text-base sm:text-lg md:text-xl text-[#1E1E1E] leading-relaxed font-['Cairo',Helvetica]"
           initial="hidden"
@@ -40,11 +41,13 @@ export const HeroImage = () => {
           variants={textVariant}
           custom={1}
         >
-          Whether you’re a supervisee completing fieldwork hours, a supervisor
-          managing multiple trainees, or an organization supporting your team’s
-          certification, we make the process easier, affordable, and compliant.
+          Whether you’re a supervisor providing feedback to supervisees and
+          keeping track of fieldwork hours, or an organization supporting
+          multiple supervisees, we make the process easier, affordable, and
+          compliant.
         </motion.p>
 
+        {/* Removed Explore Button */}
         <motion.div
           className="flex flex-wrap gap-4"
           initial="hidden"
@@ -55,12 +58,6 @@ export const HeroImage = () => {
         >
           <Button className="h-11 px-6 sm:px-10 bg-[#562af5] rounded-[33px] font-['Josefin_Sans',Helvetica] font-semibold text-white text-sm sm:text-base">
             Schedule a Demo
-          </Button>
-          <Button
-            variant="outline"
-            className="h-11 px-6 sm:px-10 rounded-[33px] border-2 border-[#562af5] font-['Josefin_Sans',Helvetica] font-semibold text-[#562af5] text-sm sm:text-base"
-          >
-            Explore the Platform
           </Button>
         </motion.div>
       </div>

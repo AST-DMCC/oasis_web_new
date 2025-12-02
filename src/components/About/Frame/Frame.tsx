@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -21,14 +21,14 @@ const aboutUsData = {
     {
       title: "Our Mission",
       content:
-        "To simplify the BCBA supervision experience through innovative, technology-driven solutions that empower aspiring BCBAs, supervisors, and employers alike.",
+        "To simplify the BCBA supervision experience through innovative, technology-driven solutions that empower aspiring BCBAs, and supervisors.",
       className: "bg-white",
       shadow: "shadow-[0px_4px_0px_#fcde62]",
     },
     {
       title: "Our Vision",
       content:
-        "To be the most trusted and widely-used online supervision platform for BCBAs worldwide, ensuring that anyone, anywhere can achieve certification without unnecessary barriers.",
+        "To be the most trusted and widely-used online supervision platform, ensuring that anyone, anywhere can lead aspiring BCBAs without unnecessary barriers.",
       className: "bg-white",
       shadow: "shadow-[0px_4px_0px_#fcde62]",
     },
@@ -101,14 +101,14 @@ export default function Frame() {
       </Card>
 
       {/* Button */}
-      <Button
+      {/* <Button
         variant="outline"
         className="h-11 px-10 py-4 rounded-[33px] border-2 border-[#562af5] bg-transparent"
       >
         <span className="font-['Josefin_Sans',Helvetica] font-semibold text-[#562af5] text-xl text-center leading-5 whitespace-nowrap">
           Explore the Platform
         </span>
-      </Button>
+      </Button> */}
     </div>
   );
 }

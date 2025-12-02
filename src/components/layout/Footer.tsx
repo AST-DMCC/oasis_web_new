@@ -11,9 +11,9 @@ export const Footer = () => {
       { title: "About Us", path: "/about" },
       { title: "Features", path: "/features" },
       { title: "Pricing", path: "/pricing" },
-      { title: "Blog & Resources", path: "/blog-resources" },
     ],
     supportLinks: [
+      { title: "Blog & Resources", path: "/blog-resources" },
       { title: "Privacy & Security", path: "/privacy" },
       { title: "FAQ", path: "/faq" },
       { title: "Contact & Support", path: "/contact" },
@@ -21,16 +21,18 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="flex flex-col md:flex-row flex-wrap items-start gap-12 pt-12 pb-20 px-6 sm:px-10 md:px-16 lg:px-24 bg-white border-t border-[#d9d9d9] w-full">
+    <footer className="flex flex-col md:flex-row flex-wrap items-start  pt-12 pb-8 pl-6 sm:px-10 md:pl-16 lg:pl-24 bg-white border-t border-[#d9d9d9] w-full">
       {/* Logo + Social */}
+      <div className="flex flex-col md:flex-row flex-wrap items-start gap-12 p">
+
       <div className="flex flex-col items-start gap-8 w-full md:w-auto">
         <Image width={194} height={64} alt="Oasis logo" src="/logo.png" />
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <Image width={24} height={24} alt="X" src="/icons/X Logo.svg" />
           <Image width={24} height={24} alt="Instagram" src="/icons/Logo Instagram.svg" />
           <Image width={24} height={24} alt="YouTube" src="/icons/Logo YouTube.svg" />
           <Image width={24} height={24} alt="LinkedIn" src="/icons/LinkedIn.svg" />
-        </div>
+        </div> */}
       </div>
 
       {/* Main Links */}
@@ -43,6 +45,7 @@ export const Footer = () => {
           </Link>
         ))}
       </div>
+      </div>
 
       {/* Support Links */}
       <div className="flex flex-col w-full sm:w-[200px] md:w-[262px] gap-3">
@@ -53,6 +56,15 @@ export const Footer = () => {
             </div>
           </Link>
         ))}
+      </div>
+        {/* Disclaimer */}
+      <div className="w-full mt-10">
+        <p className="text-xs sm:text-sm text-[#1e1e1e] opacity-70 leading-relaxed max-w-full font-['Cairo',Helvetica]">
+          <strong>Disclaimer:</strong> BCBA®, BACB® (or any other BACB® trademark used)
+          is/are registered to the Behavior Analytic Certification Board® (BACB®). This
+          website and products are not in any way sponsored by the BACB®. <br /> All information
+          and products are for educational purposes only.
+        </p>
       </div>
     </footer>
   );

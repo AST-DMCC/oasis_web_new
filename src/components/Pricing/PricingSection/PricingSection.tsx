@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -43,19 +44,27 @@ const supervisorPlans = [
   {
     title: "Standard",
     description: "Small supervision groups",
-    annualPrice: "$89/mo",
-    monthlyPrice: "$99/mo",
-    features: ["Manage up to 5 supervisees.", "Includes a 14-day free trial"],
+    features: [
+      "Manage up to 5 supervisees.",
+      "Includes a 14-day free trial",
+    ],
     isPrimary: false,
   },
   {
     title: "Premium",
-    description: "Large supervision teams",
-    annualPrice: "$134/mo",
-    monthlyPrice: "$149/mo",
+    description: "Large supervision groups",
     features: [
-      "Unlimited supervisees,",
-      "Enhanced reporting,",
+      "Unlimited supervisees",
+      "Access to unrestricted",
+      "Includes a 14-day free trial",
+    ],
+    isPrimary: false,
+  },
+  {
+    title: "Organization",
+    description: "Supervision package for ABA Organizations/University Programs",
+    features: [
+      "Unlimited supervisees",
       "Includes a 14-day free trial",
     ],
     isPrimary: true,
@@ -74,9 +83,9 @@ export default function PricingSection() {
         <h2 className="text-3xl sm:text-4xl font-semibold text-center text-[#562af5] font-['Josefin_Sans',Helvetica]">
           Supervisee Pricing
         </h2>
+
         <div className="flex flex-col lg:flex-row justify-center gap-8 w-full">
           {superviseePlans.map((plan, index) => (
-            
             <Card
               key={index}
               className="w-full sm:w-[400px] bg-white border-light shadow-[0px_4px_0px_#9ECAE866] rounded-xl"
@@ -89,6 +98,7 @@ export default function PricingSection() {
                   {plan.description}
                 </CardDescription>
               </CardHeader>
+
               <CardContent className="flex flex-col gap-6 items-center p-6">
                 <Image
                   src="/icons/Polygon-yellow.svg"
@@ -96,30 +106,30 @@ export default function PricingSection() {
                   width={34}
                   height={40}
                 />
+
                 <div className="w-full flex justify-between">
-                  <span className="text-[32px] font-semibold text-black font-['Josefin_Sans',Helvetica]">
+                  <span className="text-[32px] font-semibold text-black">
                     {plan.annualPrice}
                   </span>
-                  <span className="text-sm text-gray-500 font-['Josefin_Sans',Helvetica]">
-                    billed annually
-                  </span>
+                  <span className="text-sm text-gray-500">billed annually</span>
                 </div>
+
                 <div className="w-full flex justify-between">
-                  <span className="text-xl font-semibold text-black font-['Josefin_Sans',Helvetica]">
+                  <span className="text-xl font-semibold text-black">
                     {plan.monthlyPrice}
                   </span>
-                  <span className="text-sm text-gray-500 font-['Josefin_Sans',Helvetica]">
-                    billed monthly
-                  </span>
+                  <span className="text-sm text-gray-500">billed monthly</span>
                 </div>
+
                 <ul className="text-[18px] text-black font-['Cairo',Helvetica] text-left w-full list-disc pl-5">
                   {plan.features.map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
+
                 <Button
                   variant={plan.isPrimary ? "default" : "outline"}
-                  className={`h-11 px-10 rounded-[33px] text-lg font-semibold font-['Josefin_Sans',Helvetica] ${
+                  className={`h-11 px-10 rounded-[33px] text-lg font-semibold ${
                     plan.isPrimary
                       ? "bg-[#562af5] text-white"
                       : "border-2 border-[#562af5] text-[#562af5]"
@@ -138,6 +148,7 @@ export default function PricingSection() {
         <h2 className="text-3xl sm:text-4xl font-semibold text-center text-[#562af5] font-['Josefin_Sans',Helvetica]">
           Supervisor Pricing
         </h2>
+
         <div className="flex flex-col lg:flex-row justify-center gap-8 w-full">
           {supervisorPlans.map((plan, index) => (
             <Card
@@ -145,13 +156,14 @@ export default function PricingSection() {
               className="w-full sm:w-[400px] border-light bg-white shadow-[0px_4px_0px_#9ECAE866] rounded-xl"
             >
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl font-semibold text-black font-['Josefin_Sans',Helvetica]">
+                <CardTitle className="text-2xl font-semibold text-black">
                   {plan.title}
                 </CardTitle>
-                <CardDescription className="text-lg text-gray-600 font-['Josefin_Sans',Helvetica]">
+                <CardDescription className="text-lg text-gray-600">
                   {plan.description}
                 </CardDescription>
               </CardHeader>
+
               <CardContent className="flex flex-col gap-6 items-center p-6">
                 <Image
                   src="/icons/Polygon-purple.svg"
@@ -159,36 +171,25 @@ export default function PricingSection() {
                   width={34}
                   height={40}
                 />
-                <div className="w-full flex justify-between">
-                  <span className="text-[32px] font-semibold text-black font-['Josefin_Sans',Helvetica]">
-                    {plan.annualPrice}
-                  </span>
-                  <span className="text-sm text-gray-500 font-['Josefin_Sans',Helvetica]">
-                    billed annually
-                  </span>
-                </div>
-                <div className="w-full flex justify-between">
-                  <span className="text-xl font-semibold text-black font-['Josefin_Sans',Helvetica]">
-                    {plan.monthlyPrice}
-                  </span>
-                  <span className="text-sm text-gray-500 font-['Josefin_Sans',Helvetica]">
-                    billed monthly
-                  </span>
-                </div>
+
+                {/* ❌ Pricing removed */}
+                {/* No dollar values shown */}
+
                 <ul className="text-[18px] text-black font-['Cairo',Helvetica] text-left w-full list-disc pl-5">
                   {plan.features.map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
+
                 <Button
                   variant={plan.isPrimary ? "default" : "outline"}
-                  className={`h-11 px-10 rounded-[33px] text-lg font-semibold font-['Josefin_Sans',Helvetica] ${
+                  className={`h-11 px-10 rounded-[33px] text-lg font-semibold ${
                     plan.isPrimary
                       ? "bg-[#562af5] text-white"
                       : "border-2 border-[#562af5] text-[#562af5]"
                   }`}
                 >
-                  Start a free trial
+                  Contact us for pricing and free trial
                 </Button>
               </CardContent>
             </Card>

@@ -1,6 +1,5 @@
 import BlogLIst from "@/components/Blog-resources/BlogList";
 import BlogResources from "@/components/Blog-resources/FilterBlogs";
-import FrameWrapper from "@/components/Blog-resources/FrameWrapper";
 import ResourceList from "@/components/Blog-resources/ResourceList";
 import { Layout } from "@/components/layout/Layout";
 
@@ -17,14 +16,14 @@ export default function BlogResourcesPage() {
         </div>
 
         {/* Tutorials & Guides */}
-        <div className="w-full  mx-auto mt-[60px]">
+        {/* <div className="w-full  mx-auto mt-[60px]">
           <h2 className="[font-family:'Josefin_Sans',Helvetica] font-semibold text-text text-2xl text-center leading-9">
             Tutorials &amp; Guides
           </h2>
-        </div>
+        </div> */}
 
         {/* Frame Sections */}
-        <FrameWrapper />
+        {/* <FrameWrapper /> */}
         <ResourceList />
 
         {/* Blog Title */}
