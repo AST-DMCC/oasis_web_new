@@ -20,14 +20,15 @@ const navItems = [
   { title: "Pricing", path: "/pricing" },
   { title: "Blog & Resources", path: "/blog-resources" },
   { title: "FAQ", path: "/faq" },
+  { title: "Videos", path: "/videos" },
 ];
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [registerOpen, setRegisterOpen] = React.useState(false);
-const navigateToLogin = () => {
-   window.location.href = `https://oasis-dev.fly.dev/`;
-}
+  const navigateToLogin = () => {
+    window.location.href = `https://oasis-dev.fly.dev/`;
+  }
   return (
     <div className="bg-white flex flex-col items-center w-full">
       <div className="bg-white w-full max-w-[1440px] xl:max-w-[1540px]">

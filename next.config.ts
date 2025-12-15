@@ -10,5 +10,10 @@ const nextConfig: NextConfig = {
   // },
 };
 
+// Patch for Node 25+ where localStorage is defined but broken
+if (typeof global !== "undefined" && (global as any).localStorage) {
+  delete (global as any).localStorage;
+}
+
 
 export default nextConfig;

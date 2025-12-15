@@ -29,8 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cairo.variable} ${josefin.variable}`}>
-      <NextTopLoader height={4} color="#562af5" />
-      <Toaster position="top-center" richColors closeButton />
+        <NextTopLoader height={4} color="#562af5" />
+        <Toaster position="top-center" richColors closeButton />
         {children}
       </body>
     </html>
