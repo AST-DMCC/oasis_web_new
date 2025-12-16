@@ -1,4 +1,4 @@
-// app/about/page.tsz
+// app/about/page.tsx
 import React from "react";
 import { Layout } from "@/components/layout/Layout";
 import Frame from "@/components/About/Frame/Frame";
