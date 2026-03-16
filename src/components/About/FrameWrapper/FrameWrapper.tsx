@@ -9,28 +9,30 @@ const coreValues = [
   {
     id: 1,
     title: "Accessibility",
-    description: "Ensuring supervision is available to anyone, anywhere.",
+    // description: "Ensuring supervision is available to anyone, anywhere.",
+    description: "Supervision tools should be easy to use, practical, and accessible across training environments.",
     iconSrc: "/icons/Polygon-blue.svg",
   },
-  // {
-  //   id: 2,
-  //   title: "Affordability",
+  //  {
+  //   id: 3,
+  //   title: "Compliance",
   //   description:
-  //     "Making quality supervision affordable without compromising standards.",
-  //   iconSrc: "/icons/Polygon-yellow.svg",
+  //     "Maintaining the highest standards of compliance to ensure smooth supervision experiences.",
+  //   iconSrc: "/icons/Polygon-pink.svg",
   // },
-  {
+   {
     id: 3,
-    title: "Compliance",
+    title: "Clarity",
     description:
-      "Maintaining the highest standards of compliance to ensure smooth supervision experiences.",
+      "Clear expectations and observable criteria support fair evaluation and meaningful feedback.",
     iconSrc: "/icons/Polygon-pink.svg",
   },
   {
     id: 4,
-    title: "Clarity",
+    title: "Consistency",
     description:
-      "Providing a streamlined, user-friendly experience that makes the supervision process effortless.",
+      "Reliable supervision processes help ensure that performance is evaluated using comparable standards across supervisors and sessions.",
+      // "Providing a streamlined, user-friendly experience that makes the supervision process effortless.",
     iconSrc: "/icons/Polygon-dark-blue.svg",
   },
 ];

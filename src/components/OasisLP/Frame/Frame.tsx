@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Image from "next/image";
@@ -82,7 +80,6 @@ export const Frame = () => {
 
   return (
     <section className="flex flex-col w-full items-center gap-16 py-16 px-4 sm:px-6 md:px-10 lg:px-20">
-      
       {/* ----------------------------------------------------------- */}
       {/* ❌ OLD HEADING — COMMENTED OUT */}
       {/* <h2 className="text-center text-[32px] sm:text-[36px] md:text-[40px] font-semibold leading-[1.3] text-black">
@@ -135,6 +132,9 @@ export const Frame = () => {
 
       {/* ----------------------------------------------------------- */}
       {/* ⭐ NEW: OUR SOLUTION SECTION ⭐ */}
+      <h2 className="text-[32px] sm:text-[36px] md:text-[40px] text-center font-semibold leading-[1.3] text-black font-['Josefin_Sans',Helvetica]">
+        The Supervision
+      </h2>
       <div className="flex flex-col-reverse md:flex-row gap-6 w-full items-center">
         <div className="w-full md:w-[45%]">
           <Image
