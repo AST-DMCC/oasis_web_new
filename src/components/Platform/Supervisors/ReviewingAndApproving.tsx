@@ -6,7 +6,7 @@ import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
 
 const enrollSupervisorData = {
   iconBox: {
-    icon: "/icons/Polygon_big.png",
+    icon: "/icons/p25.png",
     iconAlt: "Enrolling a supervisor icon",
   },
   section: {
@@ -27,7 +27,7 @@ export const ReviewingAndApproving = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)] gap-8 md:gap-10 items-center">
           <FadeInWhenVisible delay={0.1}>
             <div className="w-full flex justify-center">
-              <div className="relative w-[220px] h-[250px] md:w-[260px] md:h-[290px]">
+              {/* <div className="relative w-[220px] h-[250px] md:w-[260px] md:h-[290px]">
                 <div className="absolute inset-0 bg-[#ece7f8] [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Image
@@ -36,6 +36,19 @@ export const ReviewingAndApproving = () => {
                     width={90}
                     height={90}
                     className="w-[74px] md:w-[90px] h-auto object-contain"
+                  />
+                </div>
+              </div> */}
+              <div className="relative w-[260px] h-[300px] md:w-[320px] md:h-[360px]">
+                <div className="absolute inset-0 bg-[#ece7f8] [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]" />
+
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Image
+                    src={enrollSupervisorData.iconBox.icon}
+                    alt={enrollSupervisorData.iconBox.iconAlt}
+                    width={160}
+                    height={160}
+                    className="w-[125px] md:w-[160px] h-auto object-contain"
                   />
                 </div>
               </div>

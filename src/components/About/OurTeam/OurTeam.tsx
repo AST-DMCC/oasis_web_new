@@ -14,7 +14,7 @@ const teamMemberData = {
     "Dr. Heitzman-Powell has been involved in autism research and professional training for more than two decades, with a strong emphasis on translating behavioral science into practical, scalable interventions for families, practitioners, and community systems.",
   ],
   image: {
-    src: "/icons/teamPhoto.png",
+    src: "/icons/linda.jpg",
     alt: "Dr. Linda Heitzman-Powell",
   },
   card: {
