@@ -16,7 +16,7 @@ const enrollSuperviseeData = {
   },
   iconBox: {
     bg: "bg-[#ece7f8]",
-    icon: "/icons/Polygon_big.png",
+    icon: "/icons/p12.png",
     iconAlt: "Enroll supervisee icon",
   },
 };
@@ -53,18 +53,23 @@ export const Enrolling = () => {
 
           <FadeInWhenVisible delay={0.15}>
             <div className="w-full flex justify-center">
-              <div className="relative w-[220px] h-[250px] md:w-[260px] md:h-[290px]">
+              
+              
+              <div className="relative w-[260px] h-[300px] md:w-[320px] md:h-[360px]">
                 <div className="absolute inset-0 bg-[#ece7f8] [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]" />
+
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Image
                     src={enrollSuperviseeData.iconBox.icon}
                     alt={enrollSuperviseeData.iconBox.iconAlt}
-                    width={90}
-                    height={90}
-                    className="w-[74px] md:w-[90px] h-auto object-contain"
+                    width={160}
+                    height={160}
+                    className="w-[125px] md:w-[160px] h-auto object-contain"
                   />
                 </div>
               </div>
+            
+            
             </div>
           </FadeInWhenVisible>
         </div>

@@ -51,9 +51,9 @@ export const LeadershipSystem = () => {
                   , {leadershipImpactData.ibt.description}
                 </p>
 
-                <p className="font-['Cairo',Helvetica] font-normal text-black text-[18px] md:text-[20px] leading-[1.7]">
+                {/* <p className="font-['Cairo',Helvetica] font-normal text-black text-[18px] md:text-[20px] leading-[1.7]">
                   {leadershipImpactData.paragraphs[1]}
-                </p>
+                </p> */}
                 <p className="font-['Cairo',Helvetica] font-normal text-black text-[18px] md:text-[20px] leading-[1.7]">
                   {leadershipImpactData.paragraphs[2]}
                 </p>

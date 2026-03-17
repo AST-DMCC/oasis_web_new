@@ -8,7 +8,7 @@ import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
 const frameworkData = {
   title: "The OASIS Framework",
   description: [
-    "TThe OASIS Framework for Structured Supervision serves as the conceptual foundation of the platform. It defines supervision as a continuous cycle composed of observation, evaluation, feedback, reflection, and adjustment. Rather than viewing supervision as a single event or isolated interaction, the framework organizes it as a repeatable process that supports measurable skill development over time.",
+    "The OASIS Framework for Structured Supervision serves as the conceptual foundation of the platform. It defines supervision as a continuous cycle composed of observation, evaluation, feedback, reflection, and adjustment. Rather than viewing supervision as a single event or isolated interaction, the framework organizes it as a repeatable process that supports measurable skill development over time.",
     "By grounding supervision in observable performance and defined criteria, the framework helps ensure that evaluation is consistent, feedback is meaningful, and progress is visible. This structured model supports supervisors in providing clear guidance while helping supervisees understand expectations and refine their performance.",
   ],
   buttonText: "Learn About the Framework",
