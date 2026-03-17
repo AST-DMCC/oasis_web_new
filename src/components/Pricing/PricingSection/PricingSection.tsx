@@ -341,59 +341,59 @@ const supervisorPlans = [
   },
 ];
 
-const superviseePlans = [
-  {
-    title: "Basic",
-    description: "Best for Aspiring BCBAs",
-    icon: "/icons/Polygon-yellow.svg",
-    annualPrice: "$35/mo",
-    monthlyPrice: "$39/mo",
-    annualLabel: "billed annually",
-    monthlyLabel: "billed monthly",
-    features: [
-      "Core tools for time tracking",
-      "Assignments and messaging",
-      "Includes a 14-day free trial",
-    ],
-    shadowColor: "shadow-[0px_4px_0px_#d9edf7]",
-    buttonText: "Start a free trial",
-    isFilledButton: false,
-  },
-  {
-    title: "Pro",
-    description: "Enhanced support seekers",
-    icon: "/icons/Polygon-pink.svg",
-    annualPrice: "$53/mo",
-    monthlyPrice: "$59/mo",
-    annualLabel: "billed annually",
-    monthlyLabel: "billed monthly",
-    features: [
-      "Everything in Basic package",
-      "Advanced reporting and video feedback",
-      "Includes a 14-day free trial",
-    ],
-    shadowColor: "shadow-[0px_4px_0px_#f2cfe0]",
-    buttonText: "Start a free trial",
-    isFilledButton: true,
-  },
-  {
-    title: "Premium",
-    description: "Advanced supervision tools",
-    icon: "/icons/Polygon-blue.svg",
-    annualPrice: "$75/mo",
-    monthlyPrice: "$82/mo",
-    annualLabel: "billed annually",
-    monthlyLabel: "billed monthly",
-    features: [
-      "Everything in Pro package",
-      "Priority support and premium insights",
-      "Includes a 14-day free trial",
-    ],
-    shadowColor: "shadow-[0px_4px_0px_#d9edf7]",
-    buttonText: "Start a free trial",
-    isFilledButton: false,
-  },
-];
+// const superviseePlans = [
+//   {
+//     title: "Basic",
+//     description: "Best for Aspiring BCBAs",
+//     icon: "/icons/Polygon-yellow.svg",
+//     annualPrice: "$35/mo",
+//     monthlyPrice: "$39/mo",
+//     annualLabel: "billed annually",
+//     monthlyLabel: "billed monthly",
+//     features: [
+//       "Core tools for time tracking",
+//       "Assignments and messaging",
+//       "Includes a 14-day free trial",
+//     ],
+//     shadowColor: "shadow-[0px_4px_0px_#d9edf7]",
+//     buttonText: "Start a free trial",
+//     isFilledButton: false,
+//   },
+//   {
+//     title: "Pro",
+//     description: "Enhanced support seekers",
+//     icon: "/icons/Polygon-pink.svg",
+//     annualPrice: "$53/mo",
+//     monthlyPrice: "$59/mo",
+//     annualLabel: "billed annually",
+//     monthlyLabel: "billed monthly",
+//     features: [
+//       "Everything in Basic package",
+//       "Advanced reporting and video feedback",
+//       "Includes a 14-day free trial",
+//     ],
+//     shadowColor: "shadow-[0px_4px_0px_#f2cfe0]",
+//     buttonText: "Start a free trial",
+//     isFilledButton: true,
+//   },
+//   {
+//     title: "Premium",
+//     description: "Advanced supervision tools",
+//     icon: "/icons/Polygon-blue.svg",
+//     annualPrice: "$75/mo",
+//     monthlyPrice: "$82/mo",
+//     annualLabel: "billed annually",
+//     monthlyLabel: "billed monthly",
+//     features: [
+//       "Everything in Pro package",
+//       "Priority support and premium insights",
+//       "Includes a 14-day free trial",
+//     ],
+//     shadowColor: "shadow-[0px_4px_0px_#d9edf7]",
+//     buttonText: "Start a free trial",
+//     isFilledButton: false,
+//   },
+// ];
 
 function renderPricingCards(
   plans: Array<{
