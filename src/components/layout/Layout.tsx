@@ -45,11 +45,13 @@ const platformItems = [
     children: [
       {
         title: "Understanding the Supervision Process on OASIS-S",
-        path: "/platform/understanding-the-supervision-process-on-oasis-s",
+        // path: "/platform/understanding-the-supervision-process-on-oasis-s",
+        path: "",
       },
       {
         title: "Supervisor Procedures & Structured Skill Evaluation",
-        path: "/platform/supervisor-procedures-structured-skill-evaluation",
+        // path: "/platform/supervisor-procedures-structured-skill-evaluation",
+        path: "",
       },
     ],
   },
@@ -511,7 +513,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                                           className="overflow-hidden pl-4 flex flex-col gap-2"
                                         >
                                           <Link
-                                            href="/platform/understanding-the-supervision-process-on-oasis-s"
+                                            // href="/platform/understanding-the-supervision-process-on-oasis-s"
+                                            href=""
                                             onClick={() => {
                                               setMobileMenuOpen(false);
                                               setMobilePlatformOpen(false);
@@ -526,7 +529,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                                           </Link>
 
                                           <Link
-                                            href="/platform/supervisor-procedures-structured-skill-evaluation"
+                                            // href="/platform/supervisor-procedures-structured-skill-evaluation"
+                                            href=""
                                             onClick={() => {
                                               setMobileMenuOpen(false);
                                               setMobilePlatformOpen(false);
