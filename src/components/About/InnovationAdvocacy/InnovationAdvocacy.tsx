@@ -3,26 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
 
-// const impactCardsData = {
-//   cards: [
-//     {
-//       title: "Innovation in Training and Telehealth",
-//       description: [
-//         "Dr. Heitzman-Powell has been a pioneer in technology-enabled training models. She co-developed the OASIS (Online and Applied System for Intervention Skills) program, a research-based training platform designed to teach caregivers and professionals how to implement behavioral intervention strategies.",
-//         "OASIS was developed specifically to address delays in access to services following diagnosis and to provide structured training even when specialists are not locally available.",
-//         "Her work has demonstrated that structured remote training combined with feedback can effectively teach evidence-based intervention strategies, improving outcomes for children while empowering families and practitioners.",
-//       ],
-//     },
-//     {
-//       title: "Advocacy and Professional Service",
-//       description: [
-//         "Beyond research and clinical practice, Dr. Heitzman-Powell has contributed to broader systems of care through policy and professional service. She has served on state-level autism task forces and collaborates with multidisciplinary teams focused on improving access, training, and service delivery across populations.",
-//         "She has also participated in national initiatives and clinical committees focused on expanding evidence-based care for individuals with autism and intellectual or developmental disabilities.",
-//       ],
-//     },
-//   ],
-//   cardClass: "bg-[#e8e1f8]",
-// };
+
 const impactCardsData = {
   cards: [
     {

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Search } from "lucide-react";
+// import { Search } from "lucide-react";
 import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
 
 const blogHeroData = {
@@ -50,7 +50,7 @@ export const BlogCarosal = () => {
                   {blogHeroData.banner.description}
                 </p>
 
-                <div className="w-full max-w-[620px]">
+                {/* <div className="w-full max-w-[620px]">
                   <div className="flex items-center justify-between gap-3 bg-white rounded-full px-5 md:px-6 h-[52px] md:h-[58px] shadow-none">
                     <input
                       type="text"
@@ -59,7 +59,7 @@ export const BlogCarosal = () => {
                     />
                     <Search className="w-5 h-5 text-[#222] shrink-0" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

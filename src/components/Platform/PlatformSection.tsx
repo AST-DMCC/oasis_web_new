@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
 import Link from "next/link";
+
 const platformFunctionalityData = {
   title: "Platform Functionality",
   introCard: {
@@ -67,18 +68,6 @@ export const PlatformSection = () => {
                   ),
                 )}
 
-                {/* <ul className="flex flex-col justify gap-1">
-                  {platformFunctionalityData.introCard.roleList.map(
-                    (role, index) => (
-                      <li
-                        key={index}
-                        className="list-none font-['Cairo',Helvetica] font-normal text-black text-[16px] md:text-[18px] leading-[1.8]"
-                      >
-                        · {role}
-                      </li>
-                    ),
-                  )}
-                </ul> */}
                 <ul className="w-full max-w-[420px] self-center text-left pl-6 ml-50">
                   {platformFunctionalityData.introCard.roleList.map(
                     (role, index) => (
@@ -101,25 +90,7 @@ export const PlatformSection = () => {
         </FadeInWhenVisible>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {/* {platformFunctionalityData.roles.map((role, index) => (
-            <FadeInWhenVisible key={index} delay={0.2 + index * 0.1}>
-              <Card className="w-full rounded-[10px] border-none bg-white shadow-none cursor-pointer hover:scale-[1.02] transition">
-                <CardContent className="flex flex-col items-center justify-center text-center gap-4 px-6 py-8 md:py-10">
-                  <Image
-                    src={role.icon}
-                    alt={role.iconAlt}
-                    width={34}
-                    height={40}
-                    className="w-[34px] h-auto"
-                  />
-
-                  <h3 className="font-['Josefin_Sans',Helvetica] font-semibold text-black text-[26px] md:text-[30px] leading-[1.3]">
-                    {role.title}
-                  </h3>
-                </CardContent>
-              </Card>
-            </FadeInWhenVisible>
-          ))} */}
+         
           {platformFunctionalityData.roles.map((role, index) => (
             <FadeInWhenVisible key={index} delay={0.2 + index * 0.1}>
               <Link href={role.path} className="block">

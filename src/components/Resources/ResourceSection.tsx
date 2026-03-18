@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { Search } from "lucide-react";
+// import Image from "next/image";
+// import { Search } from "lucide-react";
 import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
-import Link from "next/link";
+// import Link from "next/link";
 
 const resourcesData = {
   title: "Resources",
@@ -55,7 +55,7 @@ export const ResourcesSection = () => {
           </h1>
         </FadeInWhenVisible>
 
-        <FadeInWhenVisible delay={0.15}>
+        {/* <FadeInWhenVisible delay={0.15}>
           <div className="w-full">
             <div className="flex items-center justify-between gap-3 bg-[#f4f0ff] rounded-full px-5 md:px-6 h-[52px] md:h-[58px] shadow-none">
               <input
@@ -106,7 +106,7 @@ export const ResourcesSection = () => {
               </div>
             </FadeInWhenVisible>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
