@@ -1,6 +1,8 @@
+
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
@@ -42,9 +44,11 @@ export const FrameWork = () => {
                 </div>
 
                 <div className="flex justify-center mt-8">
-                  <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
-                    {frameworkData.buttonText}
-                  </Button>
+                  <Link href="/resources">
+                    <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
+                      {frameworkData.buttonText}
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

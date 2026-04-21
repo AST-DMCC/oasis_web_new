@@ -1,7 +1,7 @@
+
 "use client";
 
 import Image from "next/image";
-// import { Button } from "@/components/ui/button";
 import InfoCardWithIcons from "@/components/InfoCardWithIcons";
 import * as React from "react";
 
@@ -52,13 +52,8 @@ export const ModularCurriculum = () => {
                     items={feature.items}
                     shadowColor={feature.shadowColor}
                     buttonText="Explore the module topics"
+                    buttonHref="/resources"
                   />
-
-                  {/* <div className="flex justify-center mt-8">
-                    <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
-                      {feature.buttonText}
-                    </Button>
-                  </div> */}
                 </div>
               </div>
 

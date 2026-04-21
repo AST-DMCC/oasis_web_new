@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import BookDemoDialog from "@/components/auth/BookDemoDialog";
 
 const textVariant = {
   hidden: { opacity: 0, y: 30 },
@@ -15,11 +16,12 @@ const textVariant = {
 };
 
 export const HeroImage = () => {
+  const [bookDemoOpen, setBookDemoOpen] = React.useState(false);
+
   return (
     <section className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-12 pt-10 sm:pt-12 lg:pt-16 pb-10 px-4 sm:px-6 md:px-12 lg:px-20 bg-white w-full overflow-hidden">
       {/* Left Text Content */}
       <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 sm:gap-8 max-w-2xl w-full">
-        
         <motion.h1
           className="w-full max-w-[700px] text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-semibold leading-[1.2] text-[#1E1E1E] font-['Josefin_Sans',Helvetica]"
           initial="hidden"
@@ -57,7 +59,10 @@ export const HeroImage = () => {
           variants={textVariant}
           custom={2}
         >
-          <Button className="h-11 px-6 sm:px-10 bg-[#562af5] rounded-[33px] font-['Josefin_Sans',Helvetica] font-semibold text-white text-sm sm:text-base w-full sm:w-auto">
+          <Button
+            onClick={() => setBookDemoOpen(true)}
+            className="h-11 px-6 sm:px-10 bg-[#562af5] rounded-[33px] font-['Josefin_Sans',Helvetica] font-semibold text-white text-sm sm:text-base w-full sm:w-auto"
+          >
             Schedule a Demo
           </Button>
         </motion.div>
@@ -80,6 +85,11 @@ export const HeroImage = () => {
           className="w-[220px] xs:w-[250px] sm:w-[340px] lg:w-[420px] h-auto object-contain"
         />
       </motion.div>
+
+      <BookDemoDialog
+        openExternally={bookDemoOpen}
+        onOpenChange={setBookDemoOpen}
+      />
     </section>
   );
 };

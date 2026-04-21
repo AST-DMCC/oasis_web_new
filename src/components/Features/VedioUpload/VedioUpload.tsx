@@ -1,21 +1,19 @@
+
+
 "use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import InfoCardWithIcons from "@/components/InfoCardWithIcons";
 import * as React from "react";
+import BookDemoDialog from "@/components/auth/BookDemoDialog";
 
 const features = [
- 
   {
     title: "Video Upload & Review System",
     content:
       "Upload your work, receive feedback, and log your hours online—anywhere, anytime. Our platform provides:",
     items: [
-      // {  description: "• Video Upload & Review System: Submit recordings for feedback at your convenience." },
-      // {  description: "• Messaging System: Keep communication organized and accessible." },
-      // {  description: "• Time Tracker System: Log hours effortlessly and generate reports instantly." },
-      // {  description: "• Compliance Management: Stay BACB-compliant with automated checks and reports." },
       { description: "• Provide time stamped feedback at your convenience." },
       { description: "• Supervisees can upload videos seamlessly." },
     ],
@@ -23,16 +21,14 @@ const features = [
     imageAlt: "iPhone Pro",
     imageFirst: true,
     shadowColor: "#d567ad40",
-  }
+  },
 ];
 
 export const VedioUpload = () => {
+  const [bookDemoOpen, setBookDemoOpen] = React.useState(false);
+
   return (
     <section className="w-full max-w-[1280px] mx-auto px-4 py-16 flex flex-col gap-20 mt-0">
-      {/* <h2 className="text-[32px] sm:text-[36px] md:text-[40px] text-center font-semibold text-black font-['Josefin_Sans',Helvetica]">
-        Features
-      </h2> */}
-
       <div className="flex flex-col gap-8">
         {features.map((feature, index) => (
           <React.Fragment key={index}>
@@ -47,10 +43,9 @@ export const VedioUpload = () => {
                   items={feature.items}
                   content={feature.content}
                   shadowColor={feature.shadowColor}
-                  
                 />
-                
               </div>
+
               <div className="w-full md:w-1/2">
                 <Image
                   src={feature.image}
@@ -61,22 +56,23 @@ export const VedioUpload = () => {
                 />
               </div>
             </div>
-<div className="w-full flex justify-center mt-2">
-                <Button className="h-11 px-10 py-4 bg-[#562af5] rounded-[33px] font-semibold text-white text-xl font-['Josefin_Sans',Helvetica]">
-                  Schedule a Demo
-                </Button>
-              </div>
-            {/* Insert "Schedule a Demo" button after every 2 items */}
-            {/* {(index === 1 || index === 3) && (
-              <div className="w-full flex justify-center mt-2">
-                <Button className="h-11 px-10 py-4 bg-[#562af5] rounded-[33px] font-semibold text-white text-xl font-['Josefin_Sans',Helvetica]">
-                  Schedule a Demo
-                </Button>
-              </div>
-            )} */}
+
+            <div className="w-full flex justify-center mt-2">
+              <Button
+                onClick={() => setBookDemoOpen(true)}
+                className="h-11 px-10 py-4 bg-[#562af5] rounded-[33px] font-semibold text-white text-xl font-['Josefin_Sans',Helvetica]"
+              >
+                Schedule a Demo
+              </Button>
+            </div>
           </React.Fragment>
         ))}
       </div>
+
+      <BookDemoDialog
+        openExternally={bookDemoOpen}
+        onOpenChange={setBookDemoOpen}
+      />
     </section>
   );
 };

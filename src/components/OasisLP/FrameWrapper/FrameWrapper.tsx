@@ -1,11 +1,21 @@
+
 "use client";
 
+import React from "react";
 import FadeInWhenVisible from "@/components/animation/FadeInWhenVisible";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import BookDemoDialog from "@/components/auth/BookDemoDialog";
 
 export const FrameWrapper = () => {
+  const [bookDemoOpen, setBookDemoOpen] = React.useState(false);
+
   const comparisonData = [
     {
       category: "Accessibility",
@@ -37,11 +47,6 @@ export const FrameWrapper = () => {
       traditional: "Difficult to manage multiple supervisees",
       platform: "Streamlined supervision for any number of supervisees",
     },
-    // {
-    //   category: "Support Availability",
-    //   traditional: "Limited to specific hours",
-    //   platform: "Access to support, tutorials, and resources anytime",
-    // },
     {
       category: "Overall Efficiency",
       traditional: "Time-consuming and inconvenient",
@@ -56,7 +61,6 @@ export const FrameWrapper = () => {
       </h2>
 
       <div className="w-full hidden md:flex flex-col gap-4 max-w-[1280px]">
-        {/* Header row */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde628c]">
             <CardContent className="flex items-center justify-center p-6">
@@ -65,6 +69,7 @@ export const FrameWrapper = () => {
               </h3>
             </CardContent>
           </Card>
+
           <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde628c]">
             <CardContent className="flex items-center justify-center p-6">
               <h3 className="text-center text-xl font-semibold font-['Josefin_Sans',Helvetica]">
@@ -72,7 +77,8 @@ export const FrameWrapper = () => {
               </h3>
             </CardContent>
           </Card>
-          <Card className="bg-white border-light   shadow-[0px_4px_0px_#fcde62]">
+
+          <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde62]">
             <CardContent className="flex items-center justify-center p-6">
               <h3 className="text-center text-xl font-semibold font-['Josefin_Sans',Helvetica]">
                 Our Platform
@@ -81,26 +87,26 @@ export const FrameWrapper = () => {
           </Card>
         </div>
 
-        {/* Data rows */}
-
         {comparisonData.map((item, index) => (
           <FadeInWhenVisible key={index} delay={index * 0.1}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Card className="bg-white  border-light shadow-[0px_4px_0px_#fcde628c]">
+              <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde628c]">
                 <CardContent className="flex items-center justify-center p-6">
                   <h4 className="text-center text-lg font-semibold text-black font-['Josefin_Sans',Helvetica]">
                     {item.category}
                   </h4>
                 </CardContent>
               </Card>
-              <Card className="bg-white  border-light shadow-[0px_4px_0px_#fcde628c]">
+
+              <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde628c]">
                 <CardContent className="flex items-center justify-center p-6">
                   <p className="text-center text-base sm:text-lg text-black font-['Cairo',Helvetica] leading-[28px]">
                     {item.traditional}
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-white  border-light shadow-[0px_4px_0px_#fcde62]">
+
+              <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde62]">
                 <CardContent className="flex items-center justify-center p-6">
                   <p className="text-center text-base sm:text-lg text-black font-['Cairo',Helvetica] leading-[28px]">
                     {item.platform}
@@ -110,12 +116,9 @@ export const FrameWrapper = () => {
             </div>
           </FadeInWhenVisible>
         ))}
-     
-
-
       </div>
+
       <div className="w-full flex md:hidden flex-col gap-4 max-w-[1280px]">
-        {/* Header row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Card className="bg-white border-light shadow-[0px_4px_0px_#fcde62]">
             <CardContent className="flex items-center justify-center p-6">
@@ -124,10 +127,8 @@ export const FrameWrapper = () => {
               </h3>
             </CardContent>
           </Card>
-         
         </div>
 
-        {/* Mobile Accordion View */}
         <div className="md:hidden w-full">
           <Accordion type="single" collapsible className="w-full">
             {comparisonData.map((item, index) => (
@@ -139,13 +140,15 @@ export const FrameWrapper = () => {
                   <AccordionTrigger className="px-6 py-4 text-left font-['Josefin_Sans',Helvetica] font-semibold text-black text-lg sm:text-xl">
                     {item.category}
                   </AccordionTrigger>
+
                   <AccordionContent className="px-6 pb-4 flex flex-col gap-4">
                     <div className="bg-white p-4 rounded-xl border-light shadow-[0px_4px_0px_#fcde628c]">
                       <p className="text-sm sm:text-base font-['Cairo'] text-black leading-[26px]">
                         <strong>Traditional:</strong> {item.traditional}
                       </p>
                     </div>
-                    <div className="bg-white p-4 rounded-xl border-light  shadow-[0px_4px_0px_#fcde628c]">
+
+                    <div className="bg-white p-4 rounded-xl border-light shadow-[0px_4px_0px_#fcde628c]">
                       <p className="text-sm sm:text-base font-['Cairo'] text-black leading-[26px]">
                         <strong>Platform:</strong> {item.platform}
                       </p>
@@ -156,13 +159,19 @@ export const FrameWrapper = () => {
             ))}
           </Accordion>
         </div>
-
-
       </div>
 
-      <Button className="h-11 px-10 py-4 bg-[#562af5] rounded-[33px] text-white hover:bg-[#4622d4] text-lg font-semibold font-['Josefin_Sans',Helvetica]">
+      <Button
+        onClick={() => setBookDemoOpen(true)}
+        className="h-11 px-10 py-4 bg-[#562af5] rounded-[33px] text-white hover:bg-[#4622d4] text-lg font-semibold font-['Josefin_Sans',Helvetica]"
+      >
         Schedule a Demo
       </Button>
+
+      <BookDemoDialog
+        openExternally={bookDemoOpen}
+        onOpenChange={setBookDemoOpen}
+      />
     </section>
   );
 };

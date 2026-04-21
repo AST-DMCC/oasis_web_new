@@ -36,18 +36,7 @@ export const SupervisorIntroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[320px_minmax(0,1fr)] gap-8 md:gap-10 items-center">
           <FadeInWhenVisible delay={0.15}>
             <div className="w-full flex justify-center">
-              {/* <div className="relative w-[220px] h-[250px] md:w-[260px] md:h-[290px]">
-                <div className="absolute inset-0 bg-[#ece7f8] [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Image
-                    src={administratorResourcesData.introSection.iconBox.icon}
-                    alt={administratorResourcesData.introSection.iconBox.iconAlt}
-                    width={74}
-                    height={74}
-                    className="w-[62px] md:w-[74px] h-auto object-contain"
-                  />
-                </div>
-              </div> */}
+              
 
 <div className="relative w-[260px] h-[300px] md:w-[320px] md:h-[360px]">
                 <div className="absolute inset-0 bg-[#ece7f8] [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]" />

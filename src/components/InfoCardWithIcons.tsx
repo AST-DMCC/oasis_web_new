@@ -1,7 +1,9 @@
+
 // "use client";
 
 // import Image from "next/image";
 // import { Card, CardContent } from "@/components/ui/card";
+// import { Button } from "@/components/ui/button";
 // import { motion } from "framer-motion";
 
 // interface InfoItem {
@@ -14,6 +16,7 @@
 //   items: InfoItem[];
 //   shadowColor?: string;
 //   content?: string;
+//   buttonText?: string;
 // }
 
 // export default function InfoCardWithIcons({
@@ -21,6 +24,7 @@
 //   items,
 //   shadowColor = "#9ecae866",
 //   content = "",
+//   buttonText,
 // }: InfoCardWithIconsProps) {
 //   return (
 //     <motion.div
@@ -56,17 +60,24 @@
 //               </div>
 //             </div>
 //           ))}
+
+//           {buttonText && (
+//             <div className="flex justify-center mt-4">
+//               <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
+//                 {buttonText}
+//               </Button>
+//             </div>
+//           )}
 //         </CardContent>
 //       </Card>
 //     </motion.div>
 //   );
 // }
 
-
-
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -82,6 +93,7 @@ interface InfoCardWithIconsProps {
   shadowColor?: string;
   content?: string;
   buttonText?: string;
+  buttonHref?: string;
 }
 
 export default function InfoCardWithIcons({
@@ -90,6 +102,7 @@ export default function InfoCardWithIcons({
   shadowColor = "#9ecae866",
   content = "",
   buttonText,
+  buttonHref,
 }: InfoCardWithIconsProps) {
   return (
     <motion.div
@@ -128,9 +141,17 @@ export default function InfoCardWithIcons({
 
           {buttonText && (
             <div className="flex justify-center mt-4">
-              <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
-                {buttonText}
-              </Button>
+              {buttonHref ? (
+                <Link href={buttonHref}>
+                  <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
+                    {buttonText}
+                  </Button>
+                </Link>
+              ) : (
+                <Button className="h-11 md:h-12 px-8 md:px-12 rounded-full bg-[#9f86d9] hover:bg-[#8f74cf] text-white font-['Josefin_Sans',Helvetica] font-semibold text-base md:text-lg shadow-none">
+                  {buttonText}
+                </Button>
+              )}
             </div>
           )}
         </CardContent>

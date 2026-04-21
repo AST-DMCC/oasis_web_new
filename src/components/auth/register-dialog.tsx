@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
@@ -8,9 +10,8 @@ import { Label } from "../ui/label";
 import Image from "next/image";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { registerUser } from "@/lib/actions/registerUser"; // You must create this
+import { registerUser } from "@/lib/actions/registerUser";
 import { toast } from "sonner";
-
 
 interface RegisterDialogProps {
   openExternally?: boolean;
@@ -29,7 +30,6 @@ export default function RegisterDialog({
   const open = controlled ? openExternally : internalOpen;
   const setOpen = controlled ? onOpenChange! : setInternalOpen;
 
-
   const [formData, setFormData] = React.useState({
     username: "",
     first_name: "",
@@ -45,46 +45,60 @@ export default function RegisterDialog({
   }
 
   const navigateToLogin = () => {
-     window.location.href = `https://oasis-dev.fly.dev/`;
-  }
- async function handleSubmit(e: React.FormEvent) {
-  e.preventDefault();
-  const newErrors: Record<string, string> = {};
-  Object.entries(formData).forEach(([key, val]) => {
-    if (!val) newErrors[key] = "This field is required";
-  });
-  if (formData.password !== formData.c_password) {
-    newErrors.c_password = "Passwords do not match";
-  }
+    window.location.href = `https://oasis-dev.fly.dev/`;
+  };
 
-  if (Object.keys(newErrors).length > 0) {
-    setErrors(newErrors);
-    return;
-  }
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
 
-  try {
-    setLoading(true);
-    const res = await registerUser(formData);
+    const newErrors: Record<string, string> = {};
+    Object.entries(formData).forEach(([key, val]) => {
+      if (!val) newErrors[key] = "This field is required";
+    });
 
-    if (res?.success || res?.status === 200) {
-      toast.success("🎉 Registration successful! Redirecting...", {
-        duration: 3000,
-      });
-
-      setTimeout(() => {
-        window.location.href = `https://oasis-dev.fly.dev/`;
-        // window.location.href = `http://192.168.0.112:8000`;
-      }, 2000);
+    if (formData.password !== formData.c_password) {
+      newErrors.c_password = "Passwords do not match";
     }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (err: any) {
-    const backendErrors = err?.errors || {};
-    setErrors(backendErrors);
-    toast.error("Something went wrong during registration.");
-  } finally {
-    setLoading(false);
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const res = await registerUser(formData);
+
+      if (res?.success || res?.status === 200) {
+        toast.success("🎉 Registration successful! Redirecting...", {
+          duration: 3000,
+        });
+
+        setTimeout(() => {
+          window.location.href = `https://oasis-dev.fly.dev/`;
+        }, 2000);
+      }
+    // } catch (err: any) {
+    //   const backendErrors = err?.errors || {};
+    //   setErrors(backendErrors);
+    //   toast.error("Something went wrong during registration.");
+    // } finally {
+    } catch (err: unknown) {
+  const backendErrors =
+    typeof err === "object" &&
+    err !== null &&
+    "errors" in err &&
+    typeof (err as { errors?: unknown }).errors === "object" &&
+    (err as { errors?: Record<string, string> }).errors !== null
+      ? (err as { errors?: Record<string, string> }).errors ?? {}
+      : {};
+
+  setErrors(backendErrors);
+  toast.error("Something went wrong during registration.");
+} finally {
+      setLoading(false);
+    }
   }
-}
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -105,7 +119,7 @@ export default function RegisterDialog({
                 animate={{ opacity: 0.6 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.25 }}
-                className="fixed inset-0 bg-black z-40 backdrop-blur-sm"
+                className="fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"
               />
             </Dialog.Overlay>
 
@@ -115,17 +129,21 @@ export default function RegisterDialog({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] max-w-4xl h-auto md:h-[80vh] bg-white rounded-xl shadow-xl overflow-hidden flex flex-col md:flex-row outline-none"
+                className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                  w-[95vw] max-w-4xl
+                  max-h-[90vh]
+                  bg-white rounded-xl shadow-xl overflow-hidden
+                  flex flex-col md:flex-row outline-none"
               >
                 {/* Form Section */}
-                <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center relative bg-white">
+                <div className="flex-1 min-h-0 overflow-y-auto p-6 sm:p-8 bg-white">
                   <Dialog.Title asChild>
-                    <div className="text-center mb-6">
+                    <div className="text-center mb-6 pt-6 md:pt-2">
                       <Image
                         src="/logo.png"
                         alt="Oasis Logo"
-                        width={150}
-                        height={150}
+                        width={130}
+                        height={130}
                         className="mx-auto mb-2"
                       />
                       <h2 className="text-xl font-semibold text-black font-['Josefin_Sans']">
@@ -134,14 +152,18 @@ export default function RegisterDialog({
                     </div>
                   </Dialog.Title>
 
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-4 pb-6">
                     {[
                       { label: "Username", id: "username", type: "text" },
                       { label: "First Name", id: "first_name", type: "text" },
                       { label: "Last Name", id: "last_name", type: "text" },
                       { label: "Email", id: "email", type: "email" },
                       { label: "Password", id: "password", type: "password" },
-                      { label: "Confirm Password", id: "c_password", type: "password" },
+                      {
+                        label: "Confirm Password",
+                        id: "c_password",
+                        type: "password",
+                      },
                     ].map((field) => (
                       <div key={field.id} className="grid gap-1.5">
                         <Label htmlFor={field.id}>{field.label}</Label>
@@ -153,7 +175,9 @@ export default function RegisterDialog({
                           placeholder={`${field.label} (required)`}
                         />
                         {errors[field.id] && (
-                          <p className="text-sm text-red-500">{errors[field.id]}</p>
+                          <p className="text-sm text-red-500">
+                            {errors[field.id]}
+                          </p>
                         )}
                       </div>
                     ))}
@@ -165,9 +189,13 @@ export default function RegisterDialog({
                     >
                       {loading ? "Registering..." : "REGISTER"}
                     </Button>
+
                     <p className="text-center text-sm mt-2">
                       Already have an account?{" "}
-                      <span onClick={navigateToLogin} className="text-[#562af5] font-semibold cursor-pointer">
+                      <span
+                        onClick={navigateToLogin}
+                        className="text-[#562af5] font-semibold cursor-pointer"
+                      >
                         Login
                       </span>
                     </p>
@@ -176,9 +204,6 @@ export default function RegisterDialog({
 
                 {/* Right panel */}
                 <div className="flex-1 bg-[#562af5] text-white p-6 sm:p-10 flex flex-col justify-center">
-                  <h2 className="text-xl sm:text-2xl font-bold mb-4">
-                    We are more than just a website
-                  </h2>
                   <p className="text-sm sm:text-base leading-relaxed">
                     Oasis provides data-driven training for BCBA certification. We do a
                     lot of other stuff too. This text is tooting our own horn, but why

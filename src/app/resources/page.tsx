@@ -7,8 +7,8 @@ export default function ResourcesPage() {
   return (
     <Layout>
       <ResourcesSection />
-      <ResourceLinksGridSection />
-      <MoreResourcesSection />
+      <ResourceLinksGridSection /> 
+       <MoreResourcesSection />
     </Layout>
   );
 }
